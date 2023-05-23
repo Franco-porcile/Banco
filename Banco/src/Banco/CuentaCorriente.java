@@ -6,7 +6,6 @@ public class CuentaCorriente extends MiCuenta {
 	private double descubierto;
 	private double reservarSaldo = 0;
 	protected TarjetaCredito miTarjetaC = new TarjetaCredito();
-	protected TarjetaDebito miTarjetaD = new TarjetaDebito();
 	public CuentaCorriente(String nombreCuenta, double descubierto) {
 		super(nombreCuenta);
 		this.descubierto = descubierto;
@@ -22,10 +21,7 @@ public class CuentaCorriente extends MiCuenta {
 		} else
 			throw new IllegalArgumentException("No es capaz de retirar ese dinero ni con el extra");
 	}
-	public void pagarConTarjetaD(double monto) {
-		if(miTarjetaD.estado)
-			this.extraccion(monto);
-	}
+
 	public void pagarConTarjeta(double monto, double cuotas) throws Exception {
 		if (miTarjetaC.estado) {
 			double aAcreditar = miTarjetaC.pagarConTarjeta(monto, cuotas);
@@ -41,7 +37,6 @@ public class CuentaCorriente extends MiCuenta {
 					miTarjetaC.compras.put(precio, cCuotas - 1);
 					if (cCuotas == 0)
 						miTarjetaC.compras.remove(precio);
-					// Realizar acciones con total y cuotas
 					miTarjetaC.setTerminaMes(false);
 				}
 			} else

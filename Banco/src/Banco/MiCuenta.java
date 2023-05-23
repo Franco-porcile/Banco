@@ -51,6 +51,10 @@ public abstract class MiCuenta {
 			System.out.println("Error al escribir en el archivo de transacciones: " + e.getMessage());
 		}
 	}
+	public void pagarConTarjetaD(double monto) {
+		if(miTarjetaD.estado)
+			this.extraccion(monto);
+	}
 
 	protected double getSaldo() {
 		return this.saldo;

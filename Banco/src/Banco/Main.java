@@ -1,31 +1,40 @@
 package Banco;
 
 public class Main {
-    public static void main(String[] args) {
-        // Crear cuentas
-        CuentaAhorro cuentaAhorro = new CuentaAhorro("Cuenta de Ahorro");
-        CuentaCorriente cuentaCorriente = new CuentaCorriente("Cuenta Corriente", 1000);
-        CuentaPersonal cuentaPersonal = new CuentaPersonal("Cuenta Personal");
 
-        // Realizar operaciones en la cuenta de ahorro
-        cuentaAhorro.depositar(1000);
-        cuentaAhorro.aAhorro(500);
-        System.out.println("Saldo en cuenta de ahorro: " + cuentaAhorro.getSaldo());
-        cuentaAhorro.reintegro(200);
-        System.out.println("Saldo en cuenta de ahorro después del reintegro: " + cuentaAhorro.getSaldo());
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CuentaPersonal cuentaPersonal = new CuentaPersonal("Juan Perez");
+        CuentaCorriente cuentaCorriente = new CuentaCorriente("Maria Sanchez", 2000);
+        CuentaAhorro cuentaAhorro = new CuentaAhorro("Carlos Gomez");
+        PlazoFijo plazoFijo = new PlazoFijo();
 
-        // Realizar operaciones en la cuenta corriente
-        cuentaCorriente.depositar(2000);
-        cuentaCorriente.extraccion(1500);
-        System.out.println("Saldo en cuenta corriente: " + cuentaCorriente.getSaldo());
+        cuentaPersonal.depositar(500);
+        cuentaPersonal.extraccion(200);
 
-        // Realizar operaciones en la cuenta personal
-        cuentaPersonal.depositar(3000);
-        System.out.println("Saldo en cuenta personal: " + cuentaPersonal.getSaldo());
+        cuentaCorriente.depositar(1000);
+        cuentaCorriente.extraccion(500);
 
-        // Transferencia entre cuentas
-        cuentaAhorro.transferir(100, cuentaCorriente);
-        System.out.println("Saldo en cuenta de ahorro después de la transferencia: " + cuentaAhorro.getSaldo());
-        System.out.println("Saldo en cuenta corriente después de la transferencia: " + cuentaCorriente.getSaldo());
-    }
+        cuentaAhorro.depositar(2000);
+        cuentaAhorro.extraccion(1000);
+
+        /*cuentaAhorro.pedirPlazoFijo("Ana Rodriguez", 5000, 3);
+        plazoFijo.mostrarPlazosFijos();
+
+        plazoFijo.retirarPlazoFijo("Ana Rodriguez");
+
+        Tarjeta tarjeta = new Tarjeta();
+        tarjeta.obtenerTarjeta("1234567890");
+        tarjeta.pagarTarjeta();
+
+        TarjetaCredito tarjetaCredito = new TarjetaCredito();
+        tarjetaCredito.obtenerTarjeta("0987654321");
+        tarjetaCredito.pagarTarjeta();
+
+        cuentaPersonal.mostrarInformacion();
+        cuentaCorriente.mostrarInformacion();
+        cuentaAhorro.mostrarInformacion();
+	*/
+	}
+
 }
