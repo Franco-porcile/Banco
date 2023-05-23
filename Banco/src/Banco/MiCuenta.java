@@ -8,7 +8,7 @@ public abstract class MiCuenta {
 	protected String nombreCuenta;
 	private double saldo = 0;
 	protected double retiros = 0;
-	protected Tarjeta miTarjeta = new Tarjeta();
+	protected TarjetaDebito miTarjetaD = new TarjetaDebito();
 	
     public MiCuenta(String nombreCuenta) {
         this.nombreCuenta = nombreCuenta;
